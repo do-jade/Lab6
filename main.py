@@ -1,3 +1,4 @@
+# print menu
 def menu():
     print('Menu')
     print('------------- ')
@@ -5,7 +6,7 @@ def menu():
     print('2. Decode')
     print('3. Quit')
 
-
+#encodes password
 def encode(password):
     password = int(password)
     password_list = [int(i) for i in str(password)]
@@ -14,11 +15,15 @@ def encode(password):
     new_password = ''.join(new_password)
     return new_password
 
-
+# decodes password and returns original
 def decode(password):
-    pass
+    new_password = ""
+    for char in password:
+        encoded_value = str(int(char) - 3 % 10)
+        new_password += encoded_value
+    return new_password
 
-
+# menu
 def main():
     calculating = True
     while calculating:
